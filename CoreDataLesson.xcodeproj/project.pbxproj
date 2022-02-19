@@ -14,6 +14,10 @@
 		757A75C227C12B8500178236 /* CoreDataLesson.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 757A75C027C12B8500178236 /* CoreDataLesson.xcdatamodeld */; };
 		757A75C427C12B8600178236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757A75C327C12B8600178236 /* Assets.xcassets */; };
 		757A75C727C12B8600178236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757A75C527C12B8600178236 /* LaunchScreen.storyboard */; };
+		757A75DB27C12D9300178236 /* Company+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A75D727C12D9300178236 /* Company+CoreDataClass.swift */; };
+		757A75DC27C12D9300178236 /* Company+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A75D827C12D9300178236 /* Company+CoreDataProperties.swift */; };
+		757A75DD27C12D9300178236 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A75D927C12D9300178236 /* User+CoreDataClass.swift */; };
+		757A75DE27C12D9300178236 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A75DA27C12D9300178236 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		757A75C327C12B8600178236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		757A75C627C12B8600178236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757A75C827C12B8600178236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757A75D727C12D9300178236 /* Company+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Company+CoreDataClass.swift"; sourceTree = "<group>"; };
+		757A75D827C12D9300178236 /* Company+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Company+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		757A75D927C12D9300178236 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		757A75DA27C12D9300178236 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		757A75B627C12B8500178236 /* CoreDataLesson */ = {
 			isa = PBXGroup;
 			children = (
+				757A75D627C12CB300178236 /* Models */,
 				757A75B727C12B8500178236 /* AppDelegate.swift */,
 				757A75B927C12B8500178236 /* SceneDelegate.swift */,
 				757A75BB27C12B8500178236 /* ViewController.swift */,
@@ -68,6 +77,17 @@
 				757A75C027C12B8500178236 /* CoreDataLesson.xcdatamodeld */,
 			);
 			path = CoreDataLesson;
+			sourceTree = "<group>";
+		};
+		757A75D627C12CB300178236 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				757A75D727C12D9300178236 /* Company+CoreDataClass.swift */,
+				757A75D827C12D9300178236 /* Company+CoreDataProperties.swift */,
+				757A75D927C12D9300178236 /* User+CoreDataClass.swift */,
+				757A75DA27C12D9300178236 /* User+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +163,12 @@
 			files = (
 				757A75BC27C12B8500178236 /* ViewController.swift in Sources */,
 				757A75B827C12B8500178236 /* AppDelegate.swift in Sources */,
+				757A75DE27C12D9300178236 /* User+CoreDataProperties.swift in Sources */,
+				757A75DC27C12D9300178236 /* Company+CoreDataProperties.swift in Sources */,
 				757A75C227C12B8500178236 /* CoreDataLesson.xcdatamodeld in Sources */,
 				757A75BA27C12B8500178236 /* SceneDelegate.swift in Sources */,
+				757A75DB27C12D9300178236 /* Company+CoreDataClass.swift in Sources */,
+				757A75DD27C12D9300178236 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
