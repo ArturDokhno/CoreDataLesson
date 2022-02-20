@@ -27,16 +27,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         ageLabel.sizeToFit()
         
         textField.delegate = self
+        
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
 
-
+    @objc func textFieldDidChange() {
+//        print("\(textField.text)")
+    }
+ 
     func textFieldDidEndEditing(_ textField: UITextField) {
         
+        guard let name = textField.text else { return }
+        
+        dataStoreManager.updateMainUser(with: name)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @IBAction func removeButton(_ sender: Any) {
+        
+        dataStoreManager.removeNameUser()
     }
     
     

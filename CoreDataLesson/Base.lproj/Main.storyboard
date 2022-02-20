@@ -33,6 +33,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF1-PI-aM5">
+                                <rect key="frame" x="171" y="272" width="72" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="remove"/>
+                                <connections>
+                                    <action selector="removeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TyO-2W-9p7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,6 +48,8 @@
                             <constraint firstItem="YRl-jc-Jt1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9QP-Yu-IvB"/>
                             <constraint firstItem="nf2-Yc-2a4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HBU-U6-WNE"/>
                             <constraint firstItem="YAg-SJ-HAq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ikz-Gr-dID"/>
+                            <constraint firstItem="vF1-PI-aM5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P1b-OV-eP2"/>
+                            <constraint firstItem="vF1-PI-aM5" firstAttribute="top" secondItem="YAg-SJ-HAq" secondAttribute="bottom" constant="22" id="RW6-EH-a0X"/>
                             <constraint firstItem="YAg-SJ-HAq" firstAttribute="top" secondItem="nf2-Yc-2a4" secondAttribute="bottom" constant="60" id="Wru-ba-cCl"/>
                             <constraint firstItem="YAg-SJ-HAq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="krA-xo-xZd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAg-SJ-HAq" secondAttribute="trailing" constant="120" id="mfU-LT-9Oh"/>

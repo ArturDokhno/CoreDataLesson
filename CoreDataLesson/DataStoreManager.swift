@@ -23,6 +23,7 @@ class DataStoreManager {
     }()
     
     lazy var viewContext: NSManagedObjectContext = persistentContainer.viewContext
+    lazy var backgroundContext: NSManagedObjectContext = persistentContainer.newBackgroundContext()
     
     // MARK: - Core Data Saving support
     
@@ -40,27 +41,61 @@ class DataStoreManager {
     
     func obtainModelUser() -> User {
         
-        let company = Company(context: viewContext)
-        company.name = "Apple Company"
+        let feachRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        feachRequest.predicate = NSPredicate(format: "isMain = true")
         
-        let user = User(context: viewContext)
-        user.name = "Artur"
-        user.age = 29
-        user.company = company
-        
-        do {
-            try viewContext.save()
-        } catch let error {
-            print("Error: \(error)")
+        if let users = try? viewContext.fetch(feachRequest) as? [User], !users.isEmpty {
+            
+            return users.first!
+        } else {
+            let company = Company(context: viewContext)
+            company.name = "Apple Company"
+            
+            let user = User(context: viewContext)
+            user.name = "Artur"
+            user.age = 29
+            user.company = company
+            user.isMain = true
+            
+            do {
+                try viewContext.save()
+            } catch let error {
+                print("Error: \(error)")
+            }
+            
+            return user
         }
-        
-        return user
     }
     
     func updateMainUser(with name: String) {
         
         let feachRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-//        feachRequest.predicate = NSPredicate(format: " ", <#T##args: CVarArg...##CVarArg#>)
+        feachRequest.predicate = NSPredicate(format: "isMain = true")
+        
+        if let users = try? viewContext.fetch(feachRequest) as? [User] {
+            
+            guard let mainUser = users.first else { return }
+            
+            mainUser.name = name
+            
+            try? viewContext.save()
+        }
+    }
+    
+    func removeNameUser() {
+        
+        let feachRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        feachRequest.predicate = NSPredicate(format: "isMain = true")
+        
+        if let users = try? backgroundContext.fetch(feachRequest) as? [User] {
+            
+            guard let mainUser = users.first else { return }
+            
+            backgroundContext.delete(mainUser)
+            
+            try? backgroundContext.save()
+        }
+        
     }
     
     
