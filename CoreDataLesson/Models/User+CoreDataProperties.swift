@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  CoreDataLesson
 //
-//  Created by Артур Дохно on 19.02.2022.
+//  Created by Артур Дохно on 20.02.2022.
 //
 //
 
@@ -18,6 +18,8 @@ extension User {
 
     @NSManaged public var name: String?
     @NSManaged public var age: Int16
+    @NSManaged public var isMain: Bool
+    @NSManaged public var anyBool: NSNumber?
     @NSManaged public var company: Company?
 
 }
